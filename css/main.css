@@ -1,0 +1,468 @@
+/* Start variables */
+:root {
+  --PrimeryColor: #0a0509;
+  --SeconderyColor: #ffffff;
+  --thirdColor: #797979;
+  --fourthColor: #ebeced;
+  --widthCircleColor: 500px;
+}
+
+/* End variables */
+
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #705db4;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+/* Start Components */
+
+.colors-rigth {
+  width: var(--widthCircleColor);
+  height: var(--widthCircleColor);
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fa9aad;
+  right: 0;
+  top: 50px;
+  filter: blur(250px);
+  z-index: -1;
+  overflow: hidden;
+  animation-name: color2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.colors-rigth-project {
+  width: var(--widthCircleColor);
+  height: var(--widthCircleColor);
+  position: absolute;
+  border-radius: 50%;
+  background-color: #3fd2f6;
+  left: 50px;
+  top: 200px;
+  filter: blur(250px);
+  z-index: -1;
+  overflow: hidden;
+  animation-name: color;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+@media (max-width: 600px) {
+  .colors-rigth,
+  .colors-rigth-project,
+  .colors-left-project,
+  .colors-left-about {
+    display: none;
+  }
+}
+
+@keyframes color {
+    from {margin-left: 0;}
+    to {margin-left: 60rem}
+    
+}
+
+@keyframes color2 {
+    from {margin-right: 0;}
+    to {margin-right: 60rem}
+    
+  }
+
+/* End Components */
+
+.ToDoListContainer {
+  position: relative;
+  display: flex;
+  background-color: #a18aff;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 1rem;
+  border-radius: 5rem;
+  border-right: 15px solid #fff;
+  /* margin: 5rem; */
+  width: 100%;
+  height: 90vh;
+  margin-top: 5vh;
+}
+/* Start LeftBar */
+.leftContainer {
+  background-color: #ffffff;
+  padding: 2rem;
+  flex: 1.2;
+  min-height: 100%;
+  border-radius: 5rem;
+  border-top-right-radius: 7rem;
+  border-bottom-right-radius: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ProfileDetails {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.imageProfile {
+  width: 110px;
+  height: 100px;
+}
+
+.nameProfile h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-weight: 200;
+  color: #a9a9a9;
+}
+.nameProfile h2 {
+  margin-top: 5px;
+  padding-top: 0;  
+  font-size:22px;
+  color: #c2b6f5;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:10px;
+  color: #525252;
+
+}
+.title h1 {
+
+}
+.fa-file-code {
+  font-size: 2rem;
+
+}
+.confirmAddTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    gap: 10%;
+
+}
+.ChoosType{
+    width: 50%;
+    background-color: #c2b6f5;
+    color:#fff;
+    border: none;
+    padding: .4rem;
+    border-radius: 1rem;
+}
+
+.buttonAddTask{
+    border: none;
+    width: 40%;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background-color: #7258e4;
+    color: #fff;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+
+}
+.buttonAddTask:hover {
+    background-color: rgb(94, 80, 155);
+    border: none;
+    transform: scale(1.1);
+
+}
+.DetailsTodayTask {
+  /* display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column; */
+    margin-left: 30%;
+}
+.DetailsTodayTaskInsideYallow::before {
+  content: "  ";
+  display: inline-block;
+  flex-direction: row;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffca0f;
+  margin-right: 2rem;
+}
+.DetailsTodayTaskInsideBlue::before {
+  content: "  ";
+  display: inline-block;
+  flex-direction: row;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #3fd2f6;
+  margin-right: 2rem;
+}
+.DetailsTodayTaskInsideRed::before {
+  content: "  ";
+  display: inline-block;
+  flex-direction: row;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fa9aad;
+  margin-right: 2rem;
+}
+/* End LeftBar */
+
+/* Start RigthBar */
+.rigthContainer {
+  flex: 3;
+  padding: 2rem;
+  height: 100%;
+}
+.theToDoListContainer {
+  margin: 2rem;
+  height: 50%;
+  overflow: auto;
+}
+
+.titleRigth {
+  color: #fff;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleRigth h2 {
+  padding: 0;
+  margin: 0;
+  font-weight: 200;
+}
+.titleRigth h1 {
+  margin-top: 5px;
+  margin-bottom: 3rem;
+}
+
+.inputSearch {
+  width: 100%;
+  display: flex;
+  gap:2rem
+}
+.input {
+  width: 90%;
+  padding: 1rem 0.5rem;
+  border: none;
+  border-radius: 1rem;
+}
+.newTaskInput{
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #c4b5ff;
+}
+.newTaskInput::placeholder{
+    color: #f1f1f1;
+    font-size: .8rem;
+    padding: 10px;
+
+}
+
+.input::placeholder {
+  color: #c4b5ff;
+  margin: 20px;
+  padding: 20px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+button {
+    border: none;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background-color: #7258e4;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+button:hover{
+    border-bottom: 5px solid #fff;
+    background-color: #9580f0;
+}
+
+.theToDoListRed,.theToDoListYellow,.theToDoListBlue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
+.theToDoListYellow:hover{
+    background-color: #e3b40c;
+    border-bottom: 3px solid #fff;
+    transform: scale(1.01);
+    margin-left: 5px;
+
+}
+.theToDoListRed:hover{
+    background-color: #c77989;
+    border-bottom: 3px solid #fff;
+    transform: scale(1.01);
+    margin-left: 5px;
+}
+.theToDoListBlue:hover{
+    background-color: #34b0cf;
+    border-bottom: 3px solid #fff;
+    transform: scale(1.01);
+    margin-left: 5px;
+
+}
+.theToDoListYellow:hover,.theToDoListRed:hover,.theToDoListBlue:hover .icons{
+    /* color:#fff */
+}
+
+
+.TitleToDOYellow,
+.TitleToDOBlue,
+.TitleToDORed {
+  flex: 2.3;
+}
+
+.TitleToDOYellow::before {
+  content: "  ";
+  display: inline-block;
+  flex-direction: row;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffca0f;
+  margin-right: 2rem;
+}
+.TitleToDOBlue::before {
+  content: "  ";
+  display: inline-block;
+  flex-direction: row;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #3fd2f6;
+  margin-right: 2rem;
+}
+.TitleToDORed::before {
+  content: "  ";
+  display: inline-block;
+  flex-direction: row;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fa9aad;
+  margin-right: 2rem;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  flex: 0.7;
+  cursor: pointer;
+}
+.fa-pen-to-square {
+  transition: all 0.4s ease-in-out;
+}
+.fa-pen-to-square:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.fa-trash-can {
+  transition: all 0.4s ease-in-out;
+}
+.fa-trash-can:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.fa-star {
+  transition: all 0.4s ease-in-out;
+}
+.fa-star:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.countTitle{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.countTitle span{
+    color:rgb(66, 60, 94);
+    font-size: 2rem;
+    margin-right: 1rem;
+    border-bottom: 1px solid #fff;
+
+   
+}
+
+/* .circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+} */
+/* End RigthBar */
