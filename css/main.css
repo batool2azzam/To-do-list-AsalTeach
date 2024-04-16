@@ -1,7 +1,4 @@
-
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -12,15 +9,12 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-style: normal;
   background-color: #705db4;
 }
 
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 0px 15px 0px 15px;
+  margin: auto;
 }
 
 /* small */
@@ -83,7 +77,9 @@ body {
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
 }
+
 @media (max-width: 600px) {
+
   .colors-rigth,
   .colors-rigth-project,
   .colors-left-project,
@@ -93,16 +89,26 @@ body {
 }
 
 @keyframes color {
-    from {margin-left: 0;}
-    to {margin-left: 60rem}
-    
+  from {
+    margin-left: 0;
+  }
+
+  to {
+    margin-left: 60rem
+  }
+
 }
 
 @keyframes color2 {
-    from {margin-right: 0;}
-    to {margin-right: 60rem}
-    
+  from {
+    margin-right: 0;
   }
+
+  to {
+    margin-right: 60rem
+  }
+
+}
 
 /* End Components */
 
@@ -118,6 +124,7 @@ body {
   height: 90vh;
   margin-top: 5vh;
 }
+
 /* Start LeftBar */
 .leftContainer {
   background-color: #ffffff;
@@ -125,12 +132,11 @@ body {
   flex: 1.2;
   min-height: 100%;
   border-radius: 5rem;
-  border-top-right-radius: 7rem;
-  border-bottom-right-radius: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .ProfileDetails {
   display: flex;
   justify-content: center;
@@ -150,101 +156,87 @@ body {
   font-weight: 400;
   color: #a9a9a9;
 }
+
 .nameProfile h2 {
   margin-top: 5px;
-  padding-top: 0;  
-  font-size:22px;
-  color:#bd93f4;
+  padding-top: 0;
+  font-size: 22px;
+  color: #bd93f4;
   font-weight: 600;
-
 }
 
 .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:10px;
+  gap: 10px;
 }
+
 .title h1 {
   font-size: 22px;
   margin-left: 20px;
   color: #6d6c6c;
   font-weight: 600;
 }
+
 .title i {
-  color:#bd93f4;
+  color: #bd93f4;
   font-size: 22px;
 }
+
 .fa-file-code {
   font-size: 2rem;
-
-}
-.confirmAddTask{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 5rem;
-    gap: 10%;
-
-}
-.ChoosType{
-    width: 50%;
-    background-color: #c2b6f5;
-    color:#fff;
-    border: none;
-    padding: .4rem;
-    border-radius: 1rem;
 }
 
-.buttonAddTask{
-    border: none;
-    width: 40%;
-    height: 2.5rem;
-    border-radius: 2rem;
-    background-color: #7258e4;
-    color: #fff;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
-
+.confirmAddTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  gap: 10%;
 }
+
+.ChoosType {
+  width: 50%;
+  background-color: #c2b6f5;
+  color: #fff;
+  border: none;
+  padding: .4rem;
+  border-radius: 1rem;
+}
+
+.buttonAddTask {
+  border: none;
+  width: 40%;
+  height: 2.5rem;
+  border-radius: 2rem;
+  background-color: #7258e4;
+  color: #fff;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
 .buttonAddTask:hover {
-    background-color: rgb(94, 80, 155);
-    border: none;
-    transform: scale(1.1);
+  background-color: rgb(94, 80, 155);
+  border: none;
+  transform: scale(1.1);
+}
 
-}.TodayTask{
+.TodayTask {
   margin-top: 3.5rem;
 }
+
 .DetailsTodayTask {
-    margin-left: 30px;
-}
-.DetailsTodayTaskInsideYallow::before {
-  content: "  ";
-  display: inline-block;
-  flex-direction: row;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ffca0f;
-  margin-right: 2rem;
+  margin-left: 30px;
 }
 
 .icons i {
-  color:#bd93f4;
+  color: #bd93f4;
 }
 
-
-.DetailsTodayTaskInsideBlue::before {
-  content: "  ";
-  display: inline-block;
-  flex-direction: row;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #3fd2f6;
-  margin-right: 2rem;
-}
+.DetailsTodayTaskInsideYallow::before,
+.DetailsTodayTaskInsideBlue::before,
 .DetailsTodayTaskInsideRed::before {
   content: "  ";
   display: inline-block;
@@ -252,9 +244,21 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #fa9aad;
   margin-right: 2rem;
 }
+
+.DetailsTodayTaskInsideYallow::before {
+  background-color: #ffca0f;
+}
+
+.DetailsTodayTaskInsideBlue::before {
+  background-color: #3fd2f6;
+}
+
+.DetailsTodayTaskInsideRed::before {
+  background-color: #fa9aad;
+}
+
 /* End LeftBar */
 
 /* Start RigthBar */
@@ -263,6 +267,7 @@ body {
   padding: 2rem;
   height: 100%;
 }
+
 #theToDoListContainer {
   margin: 2rem;
   height: 50%;
@@ -276,31 +281,35 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .titleRigth h2 {
   padding: 0;
   margin: 0;
   font-weight: 400;
 }
+
 .titleRigth h1 {
   margin-top: 5px;
   margin-bottom: 3rem;
 }
-.hr{
+
+.hr {
   color: #3013ed;
   width: 85%;
 }
+
 .inputSearch {
   position: relative;
 }
 
 .inputSearch::before {
-  content: "\f133"; 
-  font-family: "Font Awesome 5 Free"; 
+  content: "\f133";
+  font-family: "Font Awesome 5 Free";
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color:#bd93f4;
+  color: #bd93f4;
   font-size: 18px;
 }
 
@@ -310,19 +319,21 @@ body {
   border: none;
   border-radius: 1rem;
 }
-.newTaskInput{
-    width: 100%;
-    padding: 1rem 0.5rem;
-    border: none;
-    border-radius: 1rem;
-    background-color: #c4b5ff;
-}
-.newTaskInput::placeholder{
-    color: #f1f1f1;
-    font-size: .8rem;
-    padding: 10px;
 
+.newTaskInput {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #c4b5ff;
 }
+
+.newTaskInput::placeholder {
+  color: #f1f1f1;
+  font-size: .8rem;
+  padding: 10px;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -358,45 +369,51 @@ body {
   cursor: pointer;
 }
 
-
 .input::placeholder {
   color: #c4b5ff;
   margin: 20px;
   padding: 20px;
 }
-.button{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    align-items: center;
-    margin-top: 2rem;
+
+.button {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 button {
-    border: none;
-    width: 9rem;
-    height: 2.5rem;
-    border-radius: 2rem;
-    background-color: #7258e4;
-    color: #fff;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
+  border: none;
+  width: 9rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  background-color: #7258e4;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  font-family: "Poppins", sans-serif;
 }
 
-button:hover{
-    border-bottom: 4px solid #fff;
-    background-color: #9580f0;
-    border: 2px solid #fcd340;
+button:hover {
+  border-bottom: 4px solid #fff;
+  background-color: #9580f0;
+  border: 2px solid #fcd340;
 }
-.taskTitleDesc{
+
+.taskTitleDesc {
   flex: 2.3;
 }
-.desc{
+
+.desc {
   margin-left: 3rem;
   font-size: .75rem;
   margin-top: 5px;
 }
-.theToDoListRed,.theToDoListYellow,.theToDoListBlue {
+
+.theToDoListRed,
+.theToDoListYellow,
+.theToDoListBlue {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -409,27 +426,25 @@ button:hover{
   cursor: pointer;
 }
 
-.theToDoListYellow:hover{
-    background-color: #fcd340;
-    border-bottom: 3px solid #fff;
-    transform: scale(1.01);
-    margin-left: 5px;
-
-}
-.theToDoListRed:hover{
-    background-color: #fda9ba;
-    border-bottom: 3px solid #fff;
-    transform: scale(1.01);
-    margin-left: 5px;
-}
-.theToDoListBlue:hover{
-    background-color: #6cdbf7;
-    border-bottom: 3px solid #fff;
-    transform: scale(1.01);
-    margin-left: 5px;
-
+.theToDoListYellow:hover,
+.theToDoListRed:hover,
+.theToDoListBlue:hover {
+  border-bottom: 3px solid #fff;
+  transform: scale(1.01);
+  margin-left: 5px;
 }
 
+.theToDoListYellow:hover {
+  background-color: #fcd340;
+}
+
+.theToDoListRed:hover {
+  background-color: #fda9ba;
+}
+
+.theToDoListBlue:hover {
+  background-color: #6cdbf7;
+}
 
 .TitleToDOYellow,
 .TitleToDOBlue,
@@ -437,26 +452,8 @@ button:hover{
   flex: 2.3;
 }
 
-.TitleToDOYellow::before {
-  content: "  ";
-  display: inline-block;
-  flex-direction: row;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ffca0f;
-  margin-right: 2rem;
-}
-.TitleToDOBlue::before {
-  content: "  ";
-  display: inline-block;
-  flex-direction: row;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #3fd2f6;
-  margin-right: 2rem;
-}
+.TitleToDOYellow::before,
+.TitleToDOBlue::before,
 .TitleToDORed::before {
   content: "  ";
   display: inline-block;
@@ -464,47 +461,51 @@ button:hover{
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #fa9aad;
   margin-right: 2rem;
 }
+
+.TitleToDOYellow::before {
+  background-color: #ffca0f;
+}
+
+.TitleToDOBlue::before {
+  background-color: #3fd2f6;
+}
+
+.TitleToDORed::before {
+  background-color: #fa9aad;
+}
+
 .icons {
   display: flex;
   justify-content: space-between;
   flex: 0.7;
   cursor: pointer;
 }
-.fa-pen-to-square {
+
+.fa-pen-to-square,
+.fa-trash-can,
+.fa-circle-check {
   transition: all 0.4s ease-in-out;
 }
-.fa-pen-to-square:hover {
+
+.fa-pen-to-square:hover,
+.fa-trash-can:hover,
+.fa-circle-check:hover {
   transform: scale(1.2) rotate(10deg);
 }
 
-.fa-trash-can {
-  transition: all 0.4s ease-in-out;
-}
-.fa-trash-can:hover {
-  transform: scale(1.2) rotate(10deg);
-}
-
-.fa-star {
-  transition: all 0.4s ease-in-out;
-}
-.fa-star:hover {
-  transform: scale(1.2) rotate(10deg);
+.countTitle {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
-.countTitle{
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;    
-    font-size: 1.4rem;
+.countTitle span {
+  color: rgb(66, 60, 94);
+  margin-right: .2rem;
+  border-bottom: 1px solid #fff;
 }
-
-.countTitle span{
-    color:rgb(66, 60, 94);
-    margin-right: .2rem;
-    border-bottom: 1px solid #fff;
-   }
