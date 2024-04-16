@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <script src="https://kit.fontawesome.com/436e22dece.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@300;500;600;800&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <title>Batool Azzam</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="colors-rigth"></div>
+    <div class="colors-rigth-project"></div>
+    <div class="ToDoListContainer">
+      <!-- Modal -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Add New Task</h2>
+          <input type="text" id="taskTitle" placeholder="Task Title">
+          <input type="text" id="taskDescription" placeholder="Task Description">
+          <select id="taskCategory" class="ChoosType">
+            <option value="Personal">Personal</option>
+            <option value="Freelancer">Freelancer</option>
+            <option value="Training">Training</option>
+          </select>
+          <button id="addTaskBtn">Add Task</button>
+        </div>
+      </div>
+      <!-- Left Container -->
+      <div class="leftContainer">
+        <div class="ProfileDetails">
+          <div>
+            <img src="pngwing.com1.png" class="imageProfile" />
+          </div>
+          <div class="nameProfile">
+            <h3>Do-it</h3>
+            <h2>Batool Azzam</h2>
+          </div>
+        </div>
+        <br>
+        <hr class="hr">
+        <div class="TodayTask">
+          <div class="title">
+            <i class="fa-regular fa-calendar-check"></i>
+            <h1>Today's Tasks</h1>
+          </div>
+          <div class="DetailsTodayTask">
+            <p class="DetailsTodayTaskInsideYallow">Training</p>
+            <p class="DetailsTodayTaskInsideBlue">Freelancer</p>
+            <p class="DetailsTodayTaskInsideRed">Personal</p>
+          </div>
+        </div>
+      </div>
+      <!-- Right Container -->
+      <div class="rigthContainer">
+        <div class="titleRigth">
+          <div>
+            <h2>Today's Main Focus</h2>
+            <h1>Complete To-Do List Design</h1>
+          </div>
+          <div class="count">
+            <h2 class="countTitle"><span>#</span>  Tasks: <span id="taskCount">5</span></h2>
+          </div>
+        </div>
+        <div class="inputSearch">
+          <input type="search" class="input" id="taskInput" placeholder="What is your next task?" />
+        </div>
+        <div class="button">
+          <button id="allBtn">All</button>
+          <button id="completedBtn">Completed</button>
+          <button id="incompleteBtn">Not Completed</button>
+        </div>
+        <div id="theToDoListContainer"></div>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>
+
+</html>
