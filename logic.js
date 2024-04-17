@@ -45,14 +45,21 @@ function addTask() {
   const taskTitle = document.getElementById("taskTitle").value;
   const taskDescription = document.getElementById("taskDescription").value;
   const taskCategory = document.getElementById("taskCategory").value;
+
+  if(taskTitle==''){
+    showAlert("Task title cannot be empty!", "alert-danger");
+    return;
+  }
   tasks.unshift({
     title: taskTitle,
     desc: taskDescription,
     isDone: false,
     category: taskCategory,
   });
+  
   updateUI(tasks);
   addModal.style.display = "none";
+  showAlert("Task has been added successfully!", "alert-info");
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 function editTask(index) {
@@ -66,6 +73,7 @@ function editTask(index) {
     tasks[index].desc = editTaskDescription.value;
     editModal.style.display = "none";
     updateUI(tasks);
+    showAlert("Task description Edited successfully!", "alert-info");
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 }
@@ -105,12 +113,14 @@ function toggleTaskCompletion(index) {
 function deleteTask(index) {
   tasks.splice(index, 1);
   updateUI(tasks);
+  showAlert("Task has been Deleted successfully!", "alert-info");
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function clearAllCompleted() {
   tasks = tasks.filter((task) => !task.isDone);
-  updateUI(tasks);
+  updateUI(tasks);  showAlert("Completed Todos Deleted successfully!");
+
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 function updateFilteredUI(isCompleted) {
@@ -129,5 +139,15 @@ function getClassForCategoryTitle(category) {
   if (category === "Freelancer") return "TitleToDOBlue";
   return "TitleToDOYellow";
 }
+////// Show Alerts/////////
+function showAlert(message,colorClass = 'alert-success') {
+  const successAlert = document.getElementById('successAlert');
+  successAlert.innerHTML = message
+  successAlert.classList.remove('d-none');
+  successAlert.classList.add(colorClass);
+  setTimeout(() => {
+      successAlert.classList.add('d-none');
+      successAlert.classList.remove(colorClass);
+  }, 3000);}
 
 updateUI(tasks);

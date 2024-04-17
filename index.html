@@ -4,26 +4,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/436e22dece.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/main.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <title>Batool Azzam</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="colors-rigth"></div>
-    <div class="colors-rigth-project"></div>
-    <div class="ToDoListContainer">
-      <!-- Modal for Add-->
-      <div id="addModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <h2>Add New Task</h2>
-          <input type="text" class="input" id="taskTitle" placeholder="Task Title">
-          <input type="text" class="input" id="taskDescription" placeholder="Task Description">
+    <!-- Alert -->
+    <div id="successAlert" class="alert d-none" role="alert">
+    Done successfully!
+  </div>
+    <!-- Modal for Add-->
+    <div id="addModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add New Task</h2>
+        <input type="text" class="input" id="taskTitle" placeholder="Task Title">
+        <input type="text" class="input" id="taskDescription" placeholder="Task Description">
+        <div class="modalAddBtn">
           <select id="taskCategory" class="ChoosType">
             <option value="Personal">Personal</option>
             <option value="Freelancer">Freelancer</option>
@@ -32,15 +33,19 @@
           <button id="addTaskBtn" onclick="addTask()">Add Task</button>
         </div>
       </div>
-      <!-- Modal for Edit-->
-      <div id="editModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <h2>Edit Task</h2>
-          <input type="text" class="input" id="editTaskDescription" placeholder="Task Description">
-          <button id="editTaskBtn" >Edit Task</button>
-        </div>
+    </div>
+    <!-- Modal for Edit-->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Task</h2>
+        <input type="text" class="input" id="editTaskDescription" placeholder="Task Description">
+        <button id="editTaskBtn">Edit Task</button>
       </div>
+    </div>
+    <div class="colors-rigth"></div>
+    <div class="colors-rigth-project"></div>
+    <div class="ToDoListContainer">
       <!-- Left Container -->
       <div class="leftContainer">
         <div class="ProfileDetails">
@@ -71,7 +76,7 @@
         <div class="titleRigth">
           <div>
             <h2>Today's Main Focus</h2>
-            <h1>Complete To-Do List Design</h1>
+            <h1>Complete To-Do List Logic</h1>
           </div>
           <div class="count">
             <h2 class="countTitle"><span>#</span> Tasks: <span id="taskCount">5</span></h2>
@@ -92,6 +97,7 @@
       </div>
     </div>
   </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script src="./logic.js"></script>
 
