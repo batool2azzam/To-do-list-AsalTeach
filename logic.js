@@ -19,14 +19,20 @@ let tasks = [
   },
 ];
 
-const modal = document.getElementById("myModal");
+const addModal = document.getElementById("addModal");
+const editModal = document.getElementById("editModal");
 const inputField = document.getElementById("taskInput");
-const span = document.querySelector(".close");
 
-inputField.onclick = () => (modal.style.display = "block");
-span.onclick = () => (modal.style.display = "none");
+inputField.onclick = () => (addModal.style.display = "block");
+
+function closeModal() {
+  editModal.style.display = "none";
+  addModal.style.display = "none";
+}
+
 window.onclick = (event) => {
-  if (event.target == modal) modal.style.display = "none";
+  if (event.target == addModal) addModal.style.display = "none";
+  if (event.target == editModal) editModal.style.display = "none";
 };
 
 function addTask() {
@@ -40,7 +46,20 @@ function addTask() {
     category: taskCategory,
   });
   updateUI(tasks);
-  modal.style.display = "none";
+  addModal.style.display = "none";
+}
+function editTask(index) {
+  editModal.style.display = "block";
+  const editTaskDescription = document.getElementById("editTaskDescription");
+  const editTaskBtn = document.getElementById("editTaskBtn");
+
+  editTaskDescription.value = tasks[index].desc;
+
+  editTaskBtn.onclick = function () {
+    tasks[index].desc = editTaskDescription.value;
+    editModal.style.display = "none";
+    updateUI(tasks);
+  };
 }
 
 function updateUI(tasks) {
@@ -62,7 +81,7 @@ function renderTask(task, index) {
             <div class="desc">${task.desc}</div>
           </div>
           <div class="icons">
-            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-pen-to-square" onclick="editTask(${index})"></i>
             <i class="${isDoneClass} fa-circle-check" data-task-index="${index}" onclick="toggleTaskCompletion(${index})"></i>
             <i class="fa-solid fa-trash-can" onclick="deleteTask(${index})"></i>
           </div>
@@ -74,12 +93,13 @@ function toggleTaskCompletion(index) {
   tasks[index].isDone = !tasks[index].isDone;
   updateUI(tasks);
 }
-function deleteTask(index){
+function deleteTask(index) {
   tasks.splice(index, 1);
   updateUI(tasks);
 }
+
 function clearAllCompleted() {
-  tasks = tasks.filter(task => !task.isDone);
+  tasks = tasks.filter((task) => !task.isDone);
   updateUI(tasks);
 }
 function updateFilteredUI(isCompleted) {
