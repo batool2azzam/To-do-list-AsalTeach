@@ -22,14 +22,14 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2>Add New Task</h2>
-          <input type="text" id="taskTitle" placeholder="Task Title">
-          <input type="text" id="taskDescription" placeholder="Task Description">
+          <input type="text" class="input" id="taskTitle" placeholder="Task Title">
+          <input type="text" class="input" id="taskDescription" placeholder="Task Description">
           <select id="taskCategory" class="ChoosType">
             <option value="Personal">Personal</option>
             <option value="Freelancer">Freelancer</option>
             <option value="Training">Training</option>
           </select>
-          <button id="addTaskBtn">Add Task</button>
+          <button id="addTaskBtn" onclick="addTask()">Add Task</button>
         </div>
       </div>
       <!-- Left Container -->
@@ -65,23 +65,26 @@
             <h1>Complete To-Do List Design</h1>
           </div>
           <div class="count">
-            <h2 class="countTitle"><span>#</span>  Tasks: <span id="taskCount">5</span></h2>
+            <h2 class="countTitle"><span>#</span> Tasks: <span id="taskCount">5</span></h2>
           </div>
         </div>
         <div class="inputSearch">
-          <input type="search" class="input" id="taskInput" placeholder="What is your next task?" />
+          <input type='text' class="input" id="taskInput" placeholder="What is your next task?" />
         </div>
         <div class="button">
-          <button id="allBtn">All</button>
-          <button id="completedBtn">Completed</button>
-          <button id="incompleteBtn">Not Completed</button>
+          <button id="allBtn" onclick="updateUI(tasks)">All</button>
+          <button id="completedBtn" onclick="updateFilteredUI(true)">Completed</button>
+          <button id="incompleteBtn" onclick="updateFilteredUI(false)">Not Completed</button>
         </div>
         <div id="theToDoListContainer"></div>
+
+        <button id="clearCompleted" onclick="clearAllCompleted()">Clear Completed Todos</button>
+
       </div>
     </div>
   </div>
 
- <script src="./logic.js"></script>
+  <script src="./logic.js"></script>
 
 </body>
 
