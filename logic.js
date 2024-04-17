@@ -18,7 +18,13 @@ let tasks = [
     category: "Personal",
   },
 ];
-
+window.addEventListener("load", () => {
+  const storedTasks = localStorage.getItem("tasks");
+  if (storedTasks) {
+    tasks = JSON.parse(storedTasks);
+    updateUI(tasks);
+  }
+});
 const addModal = document.getElementById("addModal");
 const editModal = document.getElementById("editModal");
 const inputField = document.getElementById("taskInput");
@@ -39,7 +45,7 @@ function addTask() {
   const taskTitle = document.getElementById("taskTitle").value;
   const taskDescription = document.getElementById("taskDescription").value;
   const taskCategory = document.getElementById("taskCategory").value;
-  tasks.push({
+  tasks.unshift({
     title: taskTitle,
     desc: taskDescription,
     isDone: false,
@@ -47,6 +53,7 @@ function addTask() {
   });
   updateUI(tasks);
   addModal.style.display = "none";
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 function editTask(index) {
   editModal.style.display = "block";
@@ -59,6 +66,7 @@ function editTask(index) {
     tasks[index].desc = editTaskDescription.value;
     editModal.style.display = "none";
     updateUI(tasks);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 }
 
@@ -92,15 +100,18 @@ function renderTask(task, index) {
 function toggleTaskCompletion(index) {
   tasks[index].isDone = !tasks[index].isDone;
   updateUI(tasks);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 function deleteTask(index) {
   tasks.splice(index, 1);
   updateUI(tasks);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function clearAllCompleted() {
   tasks = tasks.filter((task) => !task.isDone);
   updateUI(tasks);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 function updateFilteredUI(isCompleted) {
   const filteredTasks = tasks.filter((task) => task.isDone === isCompleted);
