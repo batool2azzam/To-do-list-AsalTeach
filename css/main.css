@@ -125,6 +125,15 @@ body {
   margin-top: 5vh;
 }
 
+.alert {
+  position: fixed;
+  z-index: 9999;
+  width: 22%;
+  bottom: 0;
+  left: 20px;
+  font-size: 1rem;
+}
+
 /* Start LeftBar */
 .leftContainer {
   background-color: #ffffff;
@@ -190,7 +199,7 @@ body {
 
 .confirmAddTask {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 5rem;
@@ -198,15 +207,14 @@ body {
 }
 
 .ChoosType {
-  width: 60%;
-  background-color: #c2b6f5;
+  width: 40%;
+  background-color: #ae6ff6;
   color: #fff;
   border: none;
   padding: .4rem;
   border-radius: 1rem;
   height: 2.5rem;
   font-family: "Poppins", sans-serif;
-
 }
 
 .buttonAddTask {
@@ -269,6 +277,7 @@ body {
   flex: 3;
   padding: 2rem;
   height: 100%;
+  position: relative;
 }
 
 #theToDoListContainer {
@@ -356,21 +365,46 @@ body {
 }
 
 .modal-content {
-  background-color: transparent;
+  background-color: rgb(142 103 153 / 80%);
   margin: 15% auto;
-  border: none;
+  border: 2px solid #69007dd6;
   width: 30%;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  border-radius: 15px;
 }
+
+.deleteModal {
+  padding: 20px;
+  background-color: rgb(142 103 153 / 80%);
+  border: 2px solid #69007dd6;
+  text-align: center;
+}
+
+.confirmationBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+#confirmDeleteBtn {
+  background-color: #dd7196;
+}
+
 
 .modal input {
   margin-bottom: 10px;
 }
 
 .close {
-  color: #aaa;
+  color: #ffffff;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8px;
+  margin-top: 5px;
 }
 
 .close:hover,
@@ -406,10 +440,29 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
+.modalAddBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
 #clearCompleted {
   width: auto;
-  margin: auto;
-  display: block;
+  position: absolute;
+  right: 40%;
+  background-color: #a56acf;
+  bottom: 15px;
+}
+
+.editBtn {
+  justify-content: flex-end;
+  display: flex;
+  width: 90%;
+}
+
+.h1,
+h1 {
+  font-size: 2rem;
 }
 
 button:hover {
